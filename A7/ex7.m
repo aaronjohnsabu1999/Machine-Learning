@@ -106,7 +106,8 @@ pause;
 fprintf('\nRunning K-Means clustering on pixels from an image.\n\n');
 
 %  Load an image of a bird
-A = double(imread('bird_small.png'));
+% A = double(imread('bird_small.png'));
+A = double(imread('Aaron.jpg'));
 
 % If imread does not work for you, you can try instead
 %   load ('bird_small.mat');
@@ -160,12 +161,12 @@ X_recovered = reshape(X_recovered, img_size(1), img_size(2), 3);
 
 % Display the original image 
 subplot(1, 2, 1);
-imagesc(A); 
+imagesc(size(A,1), size(A,2), A); 
 title('Original');
 
 % Display compressed image side by side
 subplot(1, 2, 2);
-imagesc(X_recovered)
+imagesc(size(X_recovered,1), size(X_recovered,2), X_recovered)
 title(sprintf('Compressed, with %d colors.', K));
 
 

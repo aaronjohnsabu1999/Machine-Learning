@@ -24,17 +24,11 @@ centroids = zeros(K, n);
 %               centroid i.
 %
 % Note: You can use a for-loop over the centroids to compute this.
-%
 
-
-
-
-
-
-
+for point = 1:m
+  centroids(idx(point),:) = centroids(idx(point),:) +  X(point,:) / sum(idx == idx(point));
+endfor
 
 % =============================================================
 
-
 end
-
